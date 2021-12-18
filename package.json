@@ -1,13 +1,26 @@
 {
-  "name": "Sayna-TestFront-javascript",
+  "name": "test-api-sayna",
+  "type": "module",
+  "author": "NRH [n.riccahang674@gmail.com]",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Test sayna API",
+  "main": "server.js",
   "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "test",
+    "sayna",
+    "token",
+    "refresh",
+    "users",
+    "crud"
+  ],
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
