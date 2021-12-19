@@ -15,7 +15,7 @@ songSchema.set('toJSON', {
     versionKey: false,
     transform: function (doc, ret) {
         // remove these props when object is serialized
-        // delete ret._id;
+        delete ret._id;
         delete ret._v;
     }
 })

@@ -3,7 +3,7 @@ import asyncHandler from 'express-async-handler'
 import User from '../models/userModel.js'
 
 const verifyToken = asyncHandler( async (req, res, next) => {
-    let token = req.params.token
+    let token = req.headers.authorization.split(' ')[1]
 
     if (token) {
         try {

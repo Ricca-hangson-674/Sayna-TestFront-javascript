@@ -10,15 +10,15 @@ import {
 	updateCard,
     subscription
 }from '../controllers/cardController.js'
-import apiLimiter  from '../middleware/rateLimitMiddleware.js'
-import verifyToken  from '../middleware/verifyTokenMiddleware.js'
-import existToken  from '../middleware/existTokenMiddleware.js'
+import apiLimiter  from '../middlewares/rateLimitMiddleware.js'
+import verifyToken  from '../middlewares/verifyTokenMiddleware.js'
+import existToken  from '../middlewares/existTokenMiddleware.js'
 
 import { 
     schemaLoginRequest, 
     schemaRegisterRequest,
     schemaUserUpdateRequest,
-    schemaCardRequest } from '../middleware/validationMiddleware.js'
+    schemaCardRequest } from '../middlewares/validationMiddleware.js'
 
 const router = express.Router()
 

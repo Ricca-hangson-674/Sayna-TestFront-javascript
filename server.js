@@ -5,7 +5,7 @@ import colors   from 'colors'
 import morgan from 'morgan'
 
 import connectDB from './src/config/db.js'
-import { notFound, errorHandler } from './src/middleware/errorMiddleware.js'
+import { notFound, errorHandler } from './src/middlewares/errorMiddleware.js'
 
 import userRoutes from './src/routes/userRoute.js'
 import songRoutes from './src/routes/songRoute.js'

@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 
 const cardSchema = mongoose.Schema({
-    cartNumber: { type: Number, required: true },
+    cartNumber: { type: String, required: true },
     month: { type: Number, required: true },
     year: { type: Number, required: true },
     cvc: { type: Number },
@@ -38,7 +38,8 @@ const userSchema = mongoose.Schema({
         required: true
     },
     token: {
-        type: String
+        type: String,
+        default: 'token'
     },
     role: {
         type: String,
@@ -59,7 +60,7 @@ userSchema.set('toJSON', {
     versionKey: false,
     transform: function (doc, ret) {
         // remove these props when object is serialized
-        // delete ret._id;
+        delete ret._id;
         delete ret._v;
     }
 })

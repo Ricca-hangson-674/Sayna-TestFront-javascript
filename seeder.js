@@ -24,7 +24,7 @@ const importData = async () => {
 
             const cards = [
                 {
-                    cardNumber : faker.finance.creditCardNumber(),
+                    cartNumber : faker.finance.creditCardNumber(),
                     // month      : faker.date.month(),
                     // year       : faker.date.future(),
                     month      : 10,
@@ -38,10 +38,11 @@ const importData = async () => {
                 firstname       : faker.name.firstName(),
                 lastname        : faker.name.lastName(),
                 sexe			: faker.name.gender(),
-                date_naissance  : faker.date.past(),
+                dateNaissance   : faker.date.past(),
                 email           : faker.internet.email(),
         		password 		: bcrypt.hashSync('password', 10),
-                cards
+                cards,
+                token           : 'token'
             }]
         }
         console.log('Users'.green)

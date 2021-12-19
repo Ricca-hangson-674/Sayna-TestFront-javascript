@@ -1,7 +1,7 @@
 import asyncHandler from 'express-async-handler'
 
 const existToken = asyncHandler( async (req, res, next) => {
-    let token = req.user.token
+    let token = req.headers.authorization.split(' ')[1]
 
     console.log('Exist Token', req.user, token)
 

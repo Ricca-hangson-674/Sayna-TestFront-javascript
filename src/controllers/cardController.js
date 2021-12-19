@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler'
 import User from '../models/userModel.js'
+import { validationResult } from 'express-validator'
 
 /**
  * @desc    Abonnement de l'utilisateur
@@ -90,7 +91,7 @@ const updateCard = asyncHandler(async (req, res) => {
             throw new Error("La carte existe déjà")
         }
 
-        if (user.cards.length) {
+        if (!user.cards.length) {
             res.status(403)
             throw new Error("Veuillez compléter votre proﬁl avec une carte de crédit")
         }
@@ -99,7 +100,7 @@ const updateCard = asyncHandler(async (req, res) => {
 
         await user.save()
 
-        res.json({
+        return res.json({
             error: false,
 			message: "Vos données ont été mises à jour"
         })

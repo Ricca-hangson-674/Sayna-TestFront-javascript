@@ -3,9 +3,9 @@ import {
 	getSongs,
     getSongById
 }from '../controllers/songController.js'
-import verifyToken  from '../middleware/verifyTokenMiddleware.js'
-import existToken  from '../middleware/existTokenMiddleware.js'
-import access  from '../middleware/accessMiddleware.js'
+import verifyToken  from '../middlewares/verifyTokenMiddleware.js'
+import existToken  from '../middlewares/existTokenMiddleware.js'
+import access  from '../middlewares/accessMiddleware.js'
 
 const router = express.Router()
 

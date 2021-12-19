@@ -99,7 +99,8 @@ const register = asyncHandler(async (req, res) => {
 		dateNaissance: date_naissance,
 		sexe,
 		email, 
-		password }
+		password
+    }
 
 	if (Object.values(body).length) {
 		if (Object.values(body).some(b => b === undefined)) {
@@ -143,7 +144,7 @@ const register = asyncHandler(async (req, res) => {
  */
 const logout = asyncHandler(async (req, res) => {
 	const user = await User.findById(req.user._id)
-	const refreshToken = await RefreshToken.findOne({user: req.user._id}).sort({created: '-1'})
+	// const refreshToken = await RefreshToken.findOne({user: req.user._id}).sort({created: '-1'})
 
 	// console.log('RefreshToken', refreshToken)
 	// console.log('User', user, req.user)
